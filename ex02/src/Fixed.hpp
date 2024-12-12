@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pipe <pipe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dbonilla <dbonilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 17:03:23 by pipe              #+#    #+#             */
-/*   Updated: 2024/12/10 17:15:59 by pipe             ###   ########.fr       */
+/*   Updated: 2024/12/12 01:01:13 by dbonilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
-
 #define FIXED_HPP
 
+
 #include <iostream>
+#include <cmath>
+
 
 class Fixed
 {
@@ -36,6 +38,12 @@ class Fixed
         float toFloat(void) const;
         int toInt(void) const;
 
+        Fixed operator+(const Fixed &rhs) const;
+        Fixed operator-(const Fixed &rhs) const;
+        Fixed operator*(const Fixed &rhs) const;
+        Fixed operator/(const Fixed &rhs) const;
+        
+        
         bool operator>(const Fixed &rhs) const;
         bool operator<(const Fixed &rhs) const;
         bool operator>=(const Fixed &rhs) const;
@@ -43,10 +51,6 @@ class Fixed
         bool operator==(const Fixed &rhs) const;
         bool operator!=(const Fixed &rhs) const;
 
-        Fixed operator+(const Fixed &rhs) const;
-        Fixed operator-(const Fixed &rhs) const;
-        Fixed operator*(const Fixed &rhs) const;
-        Fixed operator/(const Fixed &rhs) const;
 
         Fixed &operator++();
         Fixed operator++(int);
@@ -59,7 +63,8 @@ class Fixed
         static Fixed &max(Fixed &a, Fixed &b);
         static const Fixed &max(const Fixed &a, const Fixed &b);
 
-        friend std::ostream &operator<<(std::ostream &out, const Fixed &value);
 };
+        std::ostream &operator << (std::ostream &out, const Fixed &value);
+
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pipe <pipe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dbonilla <dbonilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 11:45:39 by pipe              #+#    #+#             */
-/*   Updated: 2024/12/11 03:32:01 by pipe             ###   ########.fr       */
+/*   Updated: 2024/12/11 18:09:01 by dbonilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,18 @@ Fixed a;
 
 // std::cout << "----------------------A = ----//" << a << "//---------------------" << std::endl;
 // std::cout << "Address of variable a  -->" << &a << std::endl;
-Fixed const b( 10 );
-// std::cout << "----------------------B = ----//" << b << "//---------------------" << std::endl;
+Fixed b( 10 );
+b.setRawbits(10);
+std::cout << "----------------------B = ----//" << b.toFloat() << "//---------------------" << std::endl;
+std::cout <<  b.toInt() + 42 << std::endl;
+b.printBits();
+return 0;
 // std::cout << "Address of variable b  -->" << &b << std::endl;
 // b.printBits();
 
-Fixed const c( 5.3f );
-// b.printBits();
+Fixed const c( 5.75f );
+Fixed result ( c + b);
+c.printBits();
 
 // std::cout << "----------------------C = ----//" << c << "//---------------------" << std::endl;
 

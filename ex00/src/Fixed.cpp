@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pipe <pipe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dbonilla <dbonilla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 21:20:28 by pipe              #+#    #+#             */
-/*   Updated: 2024/12/11 01:44:53 by pipe             ###   ########.fr       */
+/*   Updated: 2024/12/11 17:41:00 by dbonilla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ int Fixed::getRawBits(void) const
 
 void Fixed::setRawBits(int const raw)
 {
+    
     std::cout << "setRawBits member function called" << std::endl;
+    std::cout << " Raw value == " << raw << std::endl;
     this->_fixedPointValue = raw;
+    std::cout << "setRawBits member function called" << _fixedPointValue <<std::endl;
 }
